@@ -121,12 +121,12 @@ module.exports = {
 
     await service.setConfiguration(uid, input);
     const contentTypeConfigurations = await service.getConfiguration(uid);
-
     const data = {
       uid,
       schema,
       ...contentTypeConfigurations,
     };
+    console.log(input);
 
     ctx.body = { data };
   },
