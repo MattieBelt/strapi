@@ -7972,6 +7972,32 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@strapi-raw/create-strapi-app@workspace:packages/cli/create-strapi-app":
+  version: 0.0.0-use.local
+  resolution: "@strapi-raw/create-strapi-app@workspace:packages/cli/create-strapi-app"
+  dependencies:
+    "@strapi/generate-new": "npm:5.0.0-beta.13"
+    "@strapi/pack-up": "npm:5.0.0"
+    "@types/inquirer": "npm:8.2.5"
+    commander: "npm:8.3.0"
+    eslint-config-custom: "npm:5.0.0-beta.13"
+    inquirer: "npm:8.2.5"
+    tsconfig: "npm:5.0.0-beta.13"
+  bin:
+    create-strapi-app: ./bin/index.js
+  languageName: unknown
+  linkType: soft
+
+"@strapi-raw/create-strapi@workspace:packages/cli/create-strapi":
+  version: 0.0.0-use.local
+  resolution: "@strapi-raw/create-strapi@workspace:packages/cli/create-strapi"
+  dependencies:
+    create-strapi-app: "npm:5.0.0-beta.13"
+  bin:
+    create-strapi: ./bin/index.js
+  languageName: unknown
+  linkType: soft
+
 "@strapi-raw/data-transfer@workspace:packages/core/data-transfer":
   version: 0.0.0-use.local
   resolution: "@strapi-raw/data-transfer@workspace:packages/core/data-transfer"
@@ -14924,31 +14950,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"create-strapi-app@npm:5.0.0-beta.13, create-strapi-app@workspace:packages/cli/create-strapi-app":
-  version: 0.0.0-use.local
-  resolution: "create-strapi-app@workspace:packages/cli/create-strapi-app"
+"create-strapi-app@npm:5.0.0-beta.13":
+  version: 5.0.0-beta.13
+  resolution: "create-strapi-app@npm:5.0.0-beta.13"
   dependencies:
     "@strapi/generate-new": "npm:5.0.0-beta.13"
-    "@strapi/pack-up": "npm:5.0.0"
-    "@types/inquirer": "npm:8.2.5"
     commander: "npm:8.3.0"
-    eslint-config-custom: "npm:5.0.0-beta.13"
     inquirer: "npm:8.2.5"
-    tsconfig: "npm:5.0.0-beta.13"
   bin:
-    create-strapi-app: ./bin/index.js
-  languageName: unknown
-  linkType: soft
-
-"create-strapi@workspace:packages/cli/create-strapi":
-  version: 0.0.0-use.local
-  resolution: "create-strapi@workspace:packages/cli/create-strapi"
-  dependencies:
-    create-strapi-app: "npm:5.0.0-beta.13"
-  bin:
-    create-strapi: ./bin/index.js
-  languageName: unknown
-  linkType: soft
+    create-strapi-app: bin/index.js
+  checksum: d39b2f999fa77bbffb635076a5b617b3b791137929e6b772071342b6d527f868544e82a67f7c76cddb2a53f63eca28150325826cc00b75dc7731d28f7e6ce9a7
+  languageName: node
+  linkType: hard
 
 "crelt@npm:^1.0.5":
   version: 1.0.5
