@@ -31,7 +31,7 @@
   ],
   "scripts": {
     "build": "nx run-many --target=build --nx-ignore-cycles",
-    "build:raw": "yarn nx exec --nxIgnoreCycles --parallel=false -- node $NX_WORKSPACE_ROOT_PATH/scripts/build.js && yarn nx run-many -t copy-files",
+    "build:raw": "nx run @strapi/admin-test-utils:build && nx exec --nxIgnoreCycles --parallel=false -- node $NX_WORKSPACE_ROOT_PATH/scripts/build.js && nx run-many -t copy-files",
     "build:size": "cd examples/getstarted && yarn build",
     "build:ts": "nx run-many --target=build:ts --nx-ignore-cycles",
     "build:watch": "nx watch --all --nx-ignore-cycles -- nx run \\$NX_PROJECT_NAME:build --nx-ignore-cycles",
@@ -159,9 +159,7 @@
     "npm": ">=6.0.0"
   },
   "overrides": {
-    "@strapi/*": "@strapi-raw/*",
-    "@strapi/admin-test-utils": "admin-test-utils",
-    "@strapi-raw/admin-test-utils": "admin-test-utils"
+    "@strapi/*": "@strapi-raw/*"
   },
   "isStrapiMonorepo": true
 }
