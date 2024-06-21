@@ -1,5 +1,5 @@
 {
-  "name": "@strapi-raw/admin-test-utils",
+  "name": "@strapi/admin-test-utils",
   "version": "5.0.0-beta.13",
   "private": true,
   "description": "Test utilities for the Strapi administration panel",

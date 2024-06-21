@@ -1,5 +1,5 @@
 {
-  "name": "@strapi-raw/provider-upload-local",
+  "name": "@strapi/provider-upload-local",
   "version": "5.0.0-beta.13",
   "description": "Local provider for strapi upload",
   "keywords": [

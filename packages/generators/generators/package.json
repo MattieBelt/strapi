@@ -1,5 +1,5 @@
 {
-  "name": "@strapi-raw/generators",
+  "name": "@strapi/generators",
   "version": "5.0.0-beta.13",
   "description": "Interactive API generator.",
   "keywords": [

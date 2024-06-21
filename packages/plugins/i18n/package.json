@@ -1,5 +1,5 @@
 {
-  "name": "@strapi-raw/i18n",
+  "name": "@strapi/i18n",
   "version": "5.0.0-beta.13",
   "description": "Create read and update content in different languages, both from the Admin Panel and from the API",
   "repository": {

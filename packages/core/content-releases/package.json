@@ -1,5 +1,5 @@
 {
-  "name": "@strapi-raw/content-releases",
+  "name": "@strapi/content-releases",
   "version": "5.0.0-beta.13",
   "description": "Strapi plugin for organizing and releasing content",
   "repository": {

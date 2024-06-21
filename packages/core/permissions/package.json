@@ -1,5 +1,5 @@
 {
-  "name": "@strapi-raw/permissions",
+  "name": "@strapi/permissions",
   "version": "5.0.0-beta.13",
   "description": "Strapi's permission layer.",
   "repository": {

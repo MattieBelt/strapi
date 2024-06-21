@@ -1,5 +1,5 @@
 {
-  "name": "@strapi-raw/core",
+  "name": "@strapi/core",
   "version": "5.0.0-beta.13",
   "description": "Core of Strapi",
   "homepage": "https://strapi.io",
