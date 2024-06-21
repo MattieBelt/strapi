@@ -344,7 +344,7 @@ const getDiffHandler = (
     const source = 'Schema Integrity';
 
     Object.entries(context.diffs).forEach(([uid, diffs]) => {
-      for (const diff of diffs) {
+      for (const diff of diffs as engineDataTransfer.SchemaDiffHandlerContext['diffs']) {
         const path = [uid].concat(diff.path).join('.');
         const endPath = diff.path[diff.path.length - 1];
 
