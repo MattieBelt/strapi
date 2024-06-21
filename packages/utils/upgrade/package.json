@@ -79,7 +79,7 @@
     "@strapi/types": "5.0.0-beta.13",
     "@types/fs-extra": "11.0.4",
     "@types/jscodeshift": "0.11.10",
-    "eslint-config-custom": "workspace:*",
+    "eslint-config-custom": "5.0.0-beta.13",
     "rimraf": "5.0.5"
   },
   "engines": {
