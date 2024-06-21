@@ -1,5 +1,5 @@
 {
-  "name": "@strapi/upgrade",
+  "name": "@strapi-raw/upgrade",
   "version": "5.0.0-beta.13",
   "description": "CLI to upgrade Strapi applications effortless",
   "keywords": [

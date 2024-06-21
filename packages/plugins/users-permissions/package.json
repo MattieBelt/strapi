@@ -1,5 +1,5 @@
 {
-  "name": "@strapi/plugin-users-permissions",
+  "name": "@strapi-raw/plugin-users-permissions",
   "version": "5.0.0-beta.13",
   "description": "Protect your API with a full-authentication process based on JWT",
   "repository": {
