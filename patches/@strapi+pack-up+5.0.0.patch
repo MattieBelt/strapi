@@ -47,7 +47,7 @@ index e61fde5..db14309 100644
    return build(options);
  });
 diff --git a/node_modules/@strapi/pack-up/dist/index.js b/node_modules/@strapi/pack-up/dist/index.js
-index fd07799..d12c216 100644
+index fd07799..076ff24 100644
 --- a/node_modules/@strapi/pack-up/dist/index.js
 +++ b/node_modules/@strapi/pack-up/dist/index.js
 @@ -113,7 +113,8 @@ const loadConfig = async ({ cwd, logger }) => {
@@ -79,6 +79,24 @@ index fd07799..d12c216 100644
            chunkFileNames() {
              const parts = outputExt.split(".");
              if (parts.length === 3) {
+@@ -1148,7 +1152,7 @@ const build = async (opts = {}) => {
+     ...configOptions
+   } = opts;
+   const logger = createLogger({ silent, debug });
+-  const packageJsonLoader = ora__default.default(`Verifying package.json ${os__default.default.EOL}`).start();
++  const packageJsonLoader = ora__default.default({ text: `Verifying package.json ${os__default.default.EOL}`, isSilent: silent}).start();
+   const rawPkg = await loadPkg({ cwd, logger }).catch((err) => {
+     packageJsonLoader.fail();
+     if (isError(err)) {
+@@ -1175,7 +1179,7 @@ const build = async (opts = {}) => {
+   });
+   packageJsonLoader.succeed("Verified package.json");
+   const config = configFile ? await loadConfig({ cwd, logger }) : providedConfig;
+-  const buildContextLoader = ora__default.default(`Creating build context ${os__default.default.EOL}`).start();
++  const buildContextLoader = ora__default.default({text:`Creating build context ${os__default.default.EOL}`, isSilent: silent}).start();
+   const extMap = getExportExtensionMap();
+   const ctx = await createBuildContext({
+     config: { ...config, ...configOptions },
 @@ -2034,6 +2038,7 @@ const init = async (opts) => {
      template
    });
