@@ -1,5 +1,5 @@
 {
-  "name": "@strapi/plugin-graphql",
+  "name": "@strapi-raw/plugin-graphql",
   "version": "5.0.0-beta.13",
   "description": "Adds GraphQL endpoint with default API methods.",
   "repository": {

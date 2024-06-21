@@ -1,5 +1,5 @@
 {
-  "name": "@strapi/utils",
+  "name": "@strapi-raw/utils",
   "version": "5.0.0-beta.13",
   "description": "Shared utilities for the Strapi packages",
   "keywords": [

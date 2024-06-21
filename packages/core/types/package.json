@@ -1,5 +1,5 @@
 {
-  "name": "@strapi/types",
+  "name": "@strapi-raw/types",
   "version": "5.0.0-beta.13",
   "description": "Shared typescript types for Strapi internal use",
   "keywords": [

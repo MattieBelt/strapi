@@ -1,5 +1,5 @@
 {
-  "name": "@strapi/provider-email-mailgun",
+  "name": "@strapi-raw/provider-email-mailgun",
   "version": "5.0.0-beta.13",
   "description": "Mailgun provider for strapi email plugin",
   "keywords": [
