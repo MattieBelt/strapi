@@ -1,0 +1,89 @@
+diff --git a/node_modules/@strapi/pack-up/dist/_chunks/createBuildContext-KtU-IiYW.js b/node_modules/@strapi/pack-up/dist/_chunks/createBuildContext-KtU-IiYW.js
+index b3bc249..f89726c 100644
+--- a/node_modules/@strapi/pack-up/dist/_chunks/createBuildContext-KtU-IiYW.js
++++ b/node_modules/@strapi/pack-up/dist/_chunks/createBuildContext-KtU-IiYW.js
+@@ -70,7 +70,7 @@ const loadConfig = async ({ cwd, logger }) => {
+   return void 0;
+ };
+ function resolveConfigProperty(prop, initialValue) {
+-  if (!prop) {
++  if (prop === null || prop === undefined) {
+     return initialValue;
+   }
+   if (typeof prop === "function") {
+diff --git a/node_modules/@strapi/pack-up/dist/_chunks/index-DZewy-g_.js b/node_modules/@strapi/pack-up/dist/_chunks/index-DZewy-g_.js
+index 7a4600f..c22f8eb 100644
+--- a/node_modules/@strapi/pack-up/dist/_chunks/index-DZewy-g_.js
++++ b/node_modules/@strapi/pack-up/dist/_chunks/index-DZewy-g_.js
+@@ -375,6 +375,7 @@ const resolveViteConfig = async (ctx, task) => {
+           return false;
+         },
+         output: {
++          preserveModulesRoot: resolveConfigProperty(ctx.config.preserveModulesRoot, undefined),
+           preserveModules: createBuildContext.resolveConfigProperty(ctx.config.preserveModules, false),
+           /**
+            * Mimic TypeScript's behavior, by setting the value to "auto" to control
+@@ -384,7 +385,8 @@ const resolveViteConfig = async (ctx, task) => {
+            *
+            * For more info see https://rollupjs.org/configuration-options/#output-interop
+            */
+-          interop: "auto",
++          exports: "named",
++          interop: "default",
+           chunkFileNames() {
+             const parts = outputExt.split(".");
+             if (parts.length === 3) {
+diff --git a/node_modules/@strapi/pack-up/dist/cli.js b/node_modules/@strapi/pack-up/dist/cli.js
+index e61fde5..db14309 100644
+--- a/node_modules/@strapi/pack-up/dist/cli.js
++++ b/node_modules/@strapi/pack-up/dist/cli.js
+@@ -11,7 +11,7 @@ command("check").action(async (options) => {
+   const { check } = await Promise.resolve().then(() => require("./_chunks/check-I-yH4VcV.js"));
+   return check(options);
+ });
+-command("build").option("--sourcemap", "produce sourcemaps", true).option("--minify", "minify the output", false).action(async (options) => {
++command("build").option("--sourcemap", "produce sourcemaps").option("--minify", "minify the output").action(async (options) => {
+   const { build } = await Promise.resolve().then(() => require("./_chunks/build-DIUXup_C.js"));
+   return build(options);
+ });
+diff --git a/node_modules/@strapi/pack-up/dist/index.js b/node_modules/@strapi/pack-up/dist/index.js
+index fd07799..d12c216 100644
+--- a/node_modules/@strapi/pack-up/dist/index.js
++++ b/node_modules/@strapi/pack-up/dist/index.js
+@@ -113,7 +113,8 @@ const loadConfig = async ({ cwd, logger }) => {
+ };
+ const defineConfig = (configOptions) => configOptions;
+ function resolveConfigProperty(prop, initialValue) {
+-  if (!prop) {
++  // Patch for programtically usage of build
++  if (prop === null || prop === undefined) {
+     return initialValue;
+   }
+   if (typeof prop === "function") {
+@@ -999,6 +1000,7 @@ const resolveViteConfig = async (ctx, task) => {
+           return false;
+         },
+         output: {
++          preserveModulesRoot: resolveConfigProperty(ctx.config.preserveModulesRoot, undefined),
+           preserveModules: resolveConfigProperty(ctx.config.preserveModules, false),
+           /**
+            * Mimic TypeScript's behavior, by setting the value to "auto" to control
+@@ -1008,7 +1010,9 @@ const resolveViteConfig = async (ctx, task) => {
+            *
+            * For more info see https://rollupjs.org/configuration-options/#output-interop
+            */
+-          interop: "auto",
++          // Patch for programtically usage of build
++          exports: "named",
++          interop: "default",
+           chunkFileNames() {
+             const parts = outputExt.split(".");
+             if (parts.length === 3) {
+@@ -2034,6 +2038,7 @@ const init = async (opts) => {
+     template
+   });
+ };
++exports.utils = { loadConfig, createLogger };
+ exports.build = build;
+ exports.check = check;
+ exports.defineConfig = defineConfig;
